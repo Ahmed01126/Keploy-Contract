@@ -12,7 +12,7 @@ import com.example.userservice.service.UserService;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserService userService) {

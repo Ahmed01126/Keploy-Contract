@@ -9,7 +9,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
@@ -26,7 +28,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDto getUser(UUID id) {
         Optional<User> user = userRepository.findById(id);
-        return user.isPresent() ? UserTransformation.toUserDto(user.get()) : null;
+        return user.map(UserTransformation::toUserDto).orElse(null);
     }
 
     @Override

@@ -11,12 +11,19 @@ import java.util.UUID;
 @Table(name = "orders")
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
+
+    @Column(nullable = false)
+    @JsonProperty("product_name")
     private String productName;
+
+    @Column(nullable = false)
     private Integer quantity;
+
+    @Column(nullable = false)
     private Double price;
+
+    @Column(nullable = false)
     @JsonProperty("user_id")
     private UUID userId;
-
 }

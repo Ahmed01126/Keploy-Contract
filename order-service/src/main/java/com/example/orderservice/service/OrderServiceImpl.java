@@ -4,8 +4,10 @@ import com.example.orderservice.model.dto.OrderDto;
 import com.example.orderservice.model.entity.Order;
 import com.example.orderservice.repository.OrderRepository;
 import com.example.orderservice.util.transformation.OrderTransformation;
+import com.example.userservice.model.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.UUID;
@@ -14,20 +16,32 @@ import java.util.UUID;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
+    private final RestTemplate restTemplate;
 
     @Autowired
-    public OrderServiceImpl(OrderRepository orderRepository) {
+    public OrderServiceImpl(OrderRepository orderRepository, RestTemplate restTemplate) {
         this.orderRepository = orderRepository;
+        this.restTemplate = restTemplate;
     }
 
     @Override
     public void createOrder(OrderDto orderDto) {
+        // Fetch user details from UserService
+        UUID userId = orderDto.getUserId();
+        String userServiceUrl = "http://localhost:8081/users/get/" + userId; // Replace with actual URL
+        UserDto userDto = restTemplate.getForObject(userServiceUrl, UserDto.class);
+
+        if (userDto == null) {
+            throw new RuntimeException("User not found");
+        }
+
         orderRepository.save(OrderTransformation.toOrder(orderDto));
     }
 
     @Override
     public OrderDto getOrder(UUID orderId) {
-        return OrderTransformation.toOrderDto(orderRepository.findById(orderId));
+        Order order = orderRepository.findById(orderId).orElseThrow();
+        return OrderTransformation.toOrderDto(order);
     }
 
     @Override
