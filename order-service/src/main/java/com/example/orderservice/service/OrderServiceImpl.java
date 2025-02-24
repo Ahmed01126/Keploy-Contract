@@ -28,7 +28,7 @@ public class OrderServiceImpl implements OrderService {
     public void createOrder(OrderDto orderDto) {
         // Fetch user details from UserService
         UUID userId = orderDto.getUserId();
-        String userServiceUrl = "http://localhost:8081/users/get/" + userId; // Replace with actual URL
+        String userServiceUrl = "http://localhost:8081/users/get/" + userId;
         UserDto userDto = restTemplate.getForObject(userServiceUrl, UserDto.class);
 
         if (userDto == null) {
