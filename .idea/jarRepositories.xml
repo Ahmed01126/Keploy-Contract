@@ -9,6 +9,11 @@
     <remote-repository>
       <option name="id" value="keploy-repo" />
       <option name="name" value="keploy-repo" />
+      <option name="url" value="https://github.com/keploy/keploy.git" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="keploy-repo" />
+      <option name="name" value="keploy-repo" />
       <option name="url" value="https://github.com/keploy/keploy?tab=readme-ov-file" />
     </remote-repository>
     <remote-repository>

@@ -1,10 +1,10 @@
 package com.example.orderservice.service;
 
 import com.example.orderservice.model.dto.OrderDto;
+import com.example.orderservice.model.dto.UserDto;
 import com.example.orderservice.model.entity.Order;
 import com.example.orderservice.repository.OrderRepository;
 import com.example.orderservice.util.transformation.OrderTransformation;
-import com.example.userservice.model.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
