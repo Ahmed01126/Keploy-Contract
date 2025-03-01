@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+    title: test-3
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:8082
+paths:
+    /api/orders:
+        get:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '*/*'
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:8082
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: curl/8.5.0
+            operationId: 0e4aaf56817d2f93a32ae4f77ac4001a-20250301021431
+            responses:
+                "404":
+                    description: Not Found
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    error:
+                                        type: string
+                                    path:
+                                        type: string
+                                    status:
+                                        type: number
+                                    timestamp:
+                                        type: string
+                            example:
+                                error: Not Found
+                                path: /api/orders
+                                status: 404
+                                timestamp: "2025-02-25T16:54:56.963+00:00"
+components: {}

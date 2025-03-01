@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+    title: test-2
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:8082
+paths:
+    /orders/create:
+        post:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:8082
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: curl/8.5.0
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '*/*'
+                - name: Content-Length
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: "103"
+                - name: Content-Type
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json
+            operationId: db765cf9494cbc64c208b6a67f15399c-20250301021431
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                price:
+                                    type: number
+                                productName:
+                                    type: string
+                                quantity:
+                                    type: number
+                                userId:
+                                    type: string
+                        example:
+                            price: 123.12
+                            productName: PC
+                            quantity: 1
+                            userId: 7c65a1be-6c70-4365-9d69-5e3528f9ebb4
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties: {}
+                            example: {}
+components: {}

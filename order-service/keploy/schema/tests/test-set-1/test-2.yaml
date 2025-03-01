@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+    title: test-2
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:8082
+paths:
+    /orders/create:
+        post:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Content-Type
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:8082
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: curl/8.5.0
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '*/*'
+                - name: Content-Length
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: "109"
+            operationId: 2df9f5b2f83b90a43b0374497ddd3dc7-20250301021431
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                price:
+                                    type: number
+                                productName:
+                                    type: string
+                                quantity:
+                                    type: number
+                                userId:
+                                    type: string
+                        example:
+                            price: 123.12
+                            productName: LapLotfy
+                            quantity: 1
+                            userId: fe586600-9056-485b-ad9d-123f419263c1
+            responses:
+                "200":
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties: {}
+                            example: {}
+components: {}

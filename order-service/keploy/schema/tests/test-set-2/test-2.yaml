@@ -1,0 +1,85 @@
+openapi: 3.0.0
+info:
+    title: test-2
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:8082
+paths:
+    /orders/get/all:
+        post:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Content-Length
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: "85"
+                - name: Content-Type
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:8082
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: curl/8.5.0
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '*/*'
+            operationId: 606a4ec751cbbe680d74197c6708a8b2-20250301021431
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                price:
+                                    type: number
+                                productName:
+                                    type: string
+                                quantity:
+                                    type: number
+                                userId:
+                                    type: string
+                        example:
+                            price: 123.12
+                            productName: PC
+                            quantity: 1
+                            userId: fe586600-9056-485b
+            responses:
+                "405":
+                    description: Method Not Allowed
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    error:
+                                        type: string
+                                    path:
+                                        type: string
+                                    status:
+                                        type: number
+                                    timestamp:
+                                        type: string
+                            example:
+                                error: Method Not Allowed
+                                path: /orders/get/all
+                                status: 405
+                                timestamp: "2025-02-26T18:44:01.504+00:00"
+components: {}

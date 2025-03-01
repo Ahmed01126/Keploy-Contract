@@ -1,0 +1,109 @@
+openapi: 3.0.0
+info:
+    title: test-1
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:8082
+paths:
+    /orders/get/all:
+        post:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Cache-Control
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: no-cache
+                - name: Connection
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: keep-alive
+                - name: Content-Length
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: "91"
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:8082
+                - name: Postman-Token
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: f1b9ca00-c3a4-423c-9e9c-20c6c306feaa
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '*/*'
+                - name: Accept-Encoding
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: gzip, deflate, br
+                - name: Content-Type
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: PostmanRuntime/7.43.0
+            operationId: 79fe5274d5ebf867d413963155c3f4f4-20250301021431
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                price:
+                                    type: number
+                                productName:
+                                    type: string
+                                quantity:
+                                    type: number
+                                userId:
+                                    type: string
+                        example:
+                            price: 123.12
+                            productName: LapLotfy
+                            quantity: 1
+                            userId: fe586600-9056-485b
+            responses:
+                "405":
+                    description: Method Not Allowed
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    error:
+                                        type: string
+                                    path:
+                                        type: string
+                                    status:
+                                        type: number
+                                    timestamp:
+                                        type: string
+                            example:
+                                error: Method Not Allowed
+                                path: /orders/get/all
+                                status: 405
+                                timestamp: "2025-02-26T18:43:06.823+00:00"
+components: {}

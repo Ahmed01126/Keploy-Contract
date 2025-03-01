@@ -1,0 +1,85 @@
+openapi: 3.0.0
+info:
+    title: test-2
+    version: api.keploy.io/v1beta1
+    description: Http
+servers:
+    - url: localhost:8082
+paths:
+    /orders/create:
+        post:
+            summary: Auto-generated operation
+            description: Auto-generated from custom format
+            parameters:
+                - name: Accept
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: '*/*'
+                - name: Content-Length
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: "104"
+                - name: Content-Type
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: application/json
+                - name: Host
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: localhost:8082
+                - name: User-Agent
+                  in: header
+                  required: true
+                  schema:
+                    type: string
+                  example: curl/8.5.0
+            operationId: 11964f83171312e1d8d8ba33d2269120-20250301021431
+            requestBody:
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                price:
+                                    type: number
+                                productName:
+                                    type: string
+                                quantity:
+                                    type: number
+                                userId:
+                                    type: string
+                        example:
+                            price: 123.12
+                            productName: Lap
+                            quantity: 1
+                            userId: fe586600-9056-485b-ad9d-123f419263c1
+            responses:
+                "500":
+                    description: Internal Server Error
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    error:
+                                        type: string
+                                    path:
+                                        type: string
+                                    status:
+                                        type: number
+                                    timestamp:
+                                        type: string
+                            example:
+                                error: Internal Server Error
+                                path: /orders/create
+                                status: 500
+                                timestamp: "2025-02-25T16:20:21.499+00:00"
+components: {}
